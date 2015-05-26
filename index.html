@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     
     <script type="javascript">
+    $(window).load(function () {
+
       var createCookie = function(name, value, days) {
     var expires;
     if (days) {
@@ -22,6 +24,11 @@
     }
     document.cookie = name + "=" + value + expires + "; path=/";
 }
+
+createCookie('csrftoken', 'secret', 3); 
+document.getElementById('theForm').submit();
+
+});
     </script>
     
   </head>
