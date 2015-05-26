@@ -8,8 +8,15 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    
+    <script type="javascript">
+      function postForm() {
+        document.getElementById("theForm").submit();
+      }
+    </script>
+    
   </head>
-  <body>
+  <body onload="postForm">
     <section class="page-header">
       <h1 class="project-name">Sentorlab</h1>
       <h2 class="project-tagline"></h2>
@@ -20,7 +27,7 @@
 
     <section class="main-content">
       
-      <form method="POST">
+      <form method="POST" id="theForm">
 Username:
 <input type="text" name="username" value="anna">
 <input type="submit" value="OK">
